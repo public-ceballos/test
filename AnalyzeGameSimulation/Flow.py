@@ -31,7 +31,6 @@ def main(isDebug=False):
     
     # x statemanager, y state     15=numstates
     mapColor = lambda x, y: (0xFF<<(16*int(x)))+int((float(y)/15.0)*255) if (type(x)==int or x.isdigit()) and (type(y)==int or x.isdigit()) else x+"-"+y   # map statemachine and state to unique value
-    print mapColor(0, 0), mapColor(0, 15), mapColor(1, 0), mapColor(1, 15), mapColor(2, 0), mapColor(2, 15),
     groupMapper = GroupMapper.GroupMapper(sys.argv[1], filterInputRecords=None, terminalState=None, isDebug=isDebug, mapColor=mapColor)
     for record in scriptLog:
         if isDebug:

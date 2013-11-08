@@ -57,10 +57,10 @@ class TimelineAnalyzeViewer():
                     # fill remaining list
                     remain = TimelineAnalyzeViewer._ResolutionX - len(imgLine) if (TimelineAnalyzeViewer._ResolutionX - len(imgLine))>0 else 0
                     # [0] -> get the contain of imgLine, as we are doing the repetition of the tuple we get the second inner set
-                    emptyLine = [[empty]*remain][0]
+                    emptyLine = [empty]*remain
                     
                     imgLine = imgLine + emptyLine
-                    imgLine = imgLine * TimelineAnalyzeViewer._HeightBlock
+                    imgLine = imgLine * TimelineAnalyzeViewer._HeightBlock  # size of action clip
                     data.extend(imgLine)
                 else:
                     characters.append(line.rstrip())
